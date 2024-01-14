@@ -4,18 +4,18 @@
         'use strict';
         var r = n(1957),
           o = n(1947),
-          a = n(499),
-          i = n(9835),
+          i = n(499),
+          a = n(9835),
           s = n(1087),
           l = n(8339),
           c = n(7798);
-        const u = (0, i.aZ)({
+        const u = (0, a.aZ)({
             __name: 'App',
             setup(e) {
               const t = (0, l.tv)(),
                 n = (0, c.L)();
               return (
-                (0, i.bv)(() => {
+                (0, a.bv)(() => {
                   s.midata
                     .handleAuthResponse()
                     .then((e) => {
@@ -34,8 +34,8 @@
                     .catch();
                 }),
                 (e, t) => {
-                  const n = (0, i.up)('router-view');
-                  return (0, i.wg)(), (0, i.j4)(n);
+                  const n = (0, a.up)('router-view');
+                  return (0, a.wg)(), (0, a.j4)(n);
                 }
               );
             },
@@ -82,19 +82,6 @@
                     Promise.all([n.e(736), n.e(64), n.e(684)]).then(
                       n.bind(n, 5970),
                     ),
-                  children: [],
-                },
-              ],
-            },
-            {
-              path: '/midata/addAppointment',
-              component: () =>
-                Promise.all([n.e(736), n.e(874)]).then(n.bind(n, 2874)),
-              children: [
-                {
-                  path: '',
-                  component: () =>
-                    Promise.all([n.e(736), n.e(208)]).then(n.bind(n, 8208)),
                   children: [],
                 },
               ],
@@ -148,7 +135,7 @@
                 {
                   path: '',
                   component: () =>
-                    Promise.all([n.e(736), n.e(64), n.e(975)]).then(
+                    Promise.all([n.e(736), n.e(64), n.e(891)]).then(
                       n.bind(n, 311),
                     ),
                   children: [],
@@ -163,7 +150,7 @@
                 {
                   path: '',
                   component: () =>
-                    Promise.all([n.e(736), n.e(64), n.e(144)]).then(
+                    Promise.all([n.e(736), n.e(64), n.e(281)]).then(
                       n.bind(n, 5825),
                     ),
                   children: [],
@@ -196,37 +183,37 @@
           n.use(o.Z, t);
           const r = 'function' === typeof f ? await f({}) : f;
           n.use(r);
-          const i = (0, a.Xl)(
+          const a = (0, i.Xl)(
             'function' === typeof b ? await b({ store: r }) : b,
           );
           return (
             r.use(({ store: e }) => {
-              e.router = i;
+              e.router = a;
             }),
-            { app: n, store: r, router: i }
+            { app: n, store: r, router: a }
           );
         }
-        var P = n(4328),
-          w = n(6950);
+        var w = n(4328),
+          P = n(6950);
         const O = {
             config: { screen: { bodyClasses: !0 }, notify: {} },
-            plugins: { Notify: P.Z, Loading: w.Z },
+            plugins: { Notify: w.Z, Loading: P.Z },
           },
           j = '/',
           A = /\/\//,
           F = (e) => (j + e).replace(A, '/');
         async function L({ app: e, router: t, store: n }, r) {
           let o = !1;
-          const a = (e) => {
+          const i = (e) => {
               try {
                 return F(t.resolve(e).href);
               } catch (n) {}
               return Object(e) === e ? null : e;
             },
-            i = (e) => {
+            a = (e) => {
               if (((o = !0), 'string' === typeof e && /^https?:\/\//.test(e)))
                 return void (window.location.href = e);
-              const t = a(e);
+              const t = i(e);
               null !== t &&
                 ((window.location.href = t), window.location.reload());
             },
@@ -238,13 +225,13 @@
                 router: t,
                 store: n,
                 ssrContext: null,
-                redirect: i,
+                redirect: a,
                 urlPath: s,
                 publicPath: j,
               });
             } catch (l) {
               return l && l.url
-                ? void i(l.url)
+                ? void a(l.url)
                 : void console.error('[Quasar] boot error:', l);
             }
           !0 !== o && (e.use(t), e.mount('#q-app'));
@@ -275,28 +262,28 @@
         n.r(t), n.d(t, { default: () => c });
         var r = n(3340),
           o = (n(7966), n(7807)),
-          a = n(8726),
-          i = n(4927),
+          i = n(8726),
+          a = n(4927),
           s = n(9929),
           l = n(7503);
         const c = (0, r.xr)(({ app: e }) => {
-          o.Z.registerLanguage('javascript', i.Z),
+          o.Z.registerLanguage('javascript', a.Z),
             o.Z.registerLanguage('xml', s.Z),
             o.Z.registerLanguage('json', l.Z),
-            e.use(a.Z);
+            e.use(i.Z);
         });
       },
       1087: (e, t, n) => {
         'use strict';
-        n.r(t), n.d(t, { default: () => s, midata: () => i });
+        n.r(t), n.d(t, { default: () => s, midata: () => a });
         var r = n(3340),
           o = n(2890);
-        class a {
+        class i {
           constructor() {
             this.jsOnFhir = new o.b(
               'https://test.midata.coop',
               'mindschedule',
-              'https://relaxed-bublanina-d3592e.netlify.app/#/midata/login',
+              'https://relaxed-bublanina-d3592e.netlify.app/',
             );
           }
           getJSonFhir() {
@@ -338,13 +325,13 @@
                 .then((r) => {
                   var o;
                   if (r) {
-                    const a =
+                    const i =
                       (null === (o = r.entry) || void 0 === o
                         ? void 0
                         : o.map((e) => e.resource)) || [];
-                    console.log('Quets: ', a);
-                    const i = a.find((t) => t.title === e);
-                    i ? t(i) : n('No questionnaire found with the given title');
+                    console.log('Quets: ', i);
+                    const a = i.find((t) => t.title === e);
+                    a ? t(a) : n('No questionnaire found with the given title');
                   } else n('No results found');
                 })
                 .catch((e) => n(e));
@@ -383,9 +370,9 @@
             console.log('Creating...');
           }
         }
-        const i = new a(),
+        const a = new i(),
           s = (0, r.xr)(({ app: e }) => {
-            e.config.globalProperties.$midata = i;
+            e.config.globalProperties.$midata = a;
           });
       },
       7798: (e, t, n) => {
@@ -393,8 +380,8 @@
         n.d(t, { L: () => d });
         var r = n(1809),
           o = n(5054),
-          a = n(4328),
-          i = n(985),
+          i = n(4328),
+          a = n(985),
           s = n(1087),
           l = n(9835),
           c = n(499),
@@ -406,33 +393,33 @@
                     t(e);
                   });
             }
-            return new (n || (n = Promise))(function (n, a) {
-              function i(e) {
+            return new (n || (n = Promise))(function (n, i) {
+              function a(e) {
                 try {
                   l(r.next(e));
                 } catch (t) {
-                  a(t);
+                  i(t);
                 }
               }
               function s(e) {
                 try {
                   l(r['throw'](e));
                 } catch (t) {
-                  a(t);
+                  i(t);
                 }
               }
               function l(e) {
-                e.done ? n(e.value) : o(e.value).then(i, s);
+                e.done ? n(e.value) : o(e.value).then(a, s);
               }
               l((r = r.apply(e, t || [])).next());
             });
           };
         const d = (0, r.Q_)('user', () => {
-          const e = (0, i.XsL)('patientResource', {}),
-            t = (0, i.XsL)('patientResourceVisible', !1),
-            n = (0, i.XsL)('patientResourceExpanded', !1),
-            r = (0, i.XsL)('appointmentRessources', []),
-            d = (0, i.XsL)('currentDay', new Date());
+          const e = (0, a.XsL)('patientResource', {}),
+            t = (0, a.XsL)('patientResourceVisible', !1),
+            n = (0, a.XsL)('patientResourceExpanded', !1),
+            r = (0, a.XsL)('appointmentRessources', []),
+            d = (0, a.XsL)('currentDay', new Date());
           function h() {
             e.value = {};
           }
@@ -458,14 +445,14 @@
             return u(this, void 0, void 0, function* () {
               try {
                 yield (0, o.Z)(JSON.stringify(e, null, 2)),
-                  a.Z.create({
+                  i.Z.create({
                     message: `${t} kopiert`,
                     color: 'green',
                     position: 'top',
                     icon: 'announcement',
                   });
               } catch (n) {
-                a.Z.create({
+                i.Z.create({
                   message: `Kopieren von ${t} fehlgeschlagen`,
                   color: 'red',
                   position: 'top',
@@ -503,20 +490,20 @@
   function n(r) {
     var o = t[r];
     if (void 0 !== o) return o.exports;
-    var a = (t[r] = { exports: {} });
-    return e[r].call(a.exports, a, a.exports, n), a.exports;
+    var i = (t[r] = { exports: {} });
+    return e[r].call(i.exports, i, i.exports, n), i.exports;
   }
   (n.m = e),
     (() => {
       var e = [];
-      n.O = (t, r, o, a) => {
+      n.O = (t, r, o, i) => {
         if (!r) {
-          var i = 1 / 0;
+          var a = 1 / 0;
           for (u = 0; u < e.length; u++) {
-            for (var [r, o, a] = e[u], s = !0, l = 0; l < r.length; l++)
-              (!1 & a || i >= a) && Object.keys(n.O).every((e) => n.O[e](r[l]))
+            for (var [r, o, i] = e[u], s = !0, l = 0; l < r.length; l++)
+              (!1 & i || a >= i) && Object.keys(n.O).every((e) => n.O[e](r[l]))
                 ? r.splice(l--, 1)
-                : ((s = !1), a < i && (i = a));
+                : ((s = !1), i < a && (a = i));
             if (s) {
               e.splice(u--, 1);
               var c = o();
@@ -525,9 +512,9 @@
           }
           return t;
         }
-        a = a || 0;
-        for (var u = e.length; u > 0 && e[u - 1][2] > a; u--) e[u] = e[u - 1];
-        e[u] = [r, o, a];
+        i = i || 0;
+        for (var u = e.length; u > 0 && e[u - 1][2] > i; u--) e[u] = e[u - 1];
+        e[u] = [r, o, i];
       };
     })(),
     (() => {
@@ -557,18 +544,17 @@
         (64 === e ? 'chunk-common' : e) +
         '.' +
         {
-          64: '1ae1edce',
-          144: 'e07d5094',
-          208: '4a9da4e5',
-          219: 'bde4666a',
-          329: '0b741adf',
-          540: '6b973ec6',
-          638: '3a947947',
-          684: '6329f9b0',
-          737: '4579ac5c',
-          874: '32372874',
-          915: 'efea9efb',
-          975: '735c5bba',
+          64: '0ee0c624',
+          219: '008d42ff',
+          281: '3930e911',
+          329: '5f580cc9',
+          540: '696c9299',
+          638: '9a4ea1a5',
+          684: '4aeb04e5',
+          737: '812546ec',
+          874: '60dcb002',
+          891: '4bab6c3c',
+          915: '0867b783',
         }[e] +
         '.js';
     })(),
@@ -578,14 +564,14 @@
         e +
         '.' +
         {
-          144: 'b12f4d1f',
-          219: 'f4c2706d',
-          329: '4298781d',
+          219: 'b7248331',
+          281: 'db7544f6',
+          329: 'e9089b8d',
           540: '60e7fba5',
           638: '32a997eb',
-          684: 'baae3670',
+          684: '3801a6ed',
           874: 'cc1f463a',
-          975: 'b12f4d1f',
+          891: 'db7544f6',
         }[e] +
         '.css';
     })(),
@@ -605,11 +591,11 @@
     (() => {
       var e = {},
         t = 'quasarapp:';
-      n.l = (r, o, a, i) => {
+      n.l = (r, o, i, a) => {
         if (e[r]) e[r].push(o);
         else {
           var s, l;
-          if (void 0 !== a)
+          if (void 0 !== i)
             for (
               var c = document.getElementsByTagName('script'), u = 0;
               u < c.length;
@@ -618,7 +604,7 @@
               var d = c[u];
               if (
                 d.getAttribute('src') == r ||
-                d.getAttribute('data-webpack') == t + a
+                d.getAttribute('data-webpack') == t + i
               ) {
                 s = d;
                 break;
@@ -630,7 +616,7 @@
             (s.charset = 'utf-8'),
             (s.timeout = 120),
             n.nc && s.setAttribute('nonce', n.nc),
-            s.setAttribute('data-webpack', t + a),
+            s.setAttribute('data-webpack', t + i),
             (s.src = r)),
             (e[r] = [o]);
           var h = (t, n) => {
@@ -668,30 +654,30 @@
     (() => {
       if ('undefined' !== typeof document) {
         var e = (e, t, n, r, o) => {
-            var a = document.createElement('link');
-            (a.rel = 'stylesheet'), (a.type = 'text/css');
-            var i = (n) => {
-              if (((a.onerror = a.onload = null), 'load' === n.type)) r();
+            var i = document.createElement('link');
+            (i.rel = 'stylesheet'), (i.type = 'text/css');
+            var a = (n) => {
+              if (((i.onerror = i.onload = null), 'load' === n.type)) r();
               else {
-                var i = n && ('load' === n.type ? 'missing' : n.type),
+                var a = n && ('load' === n.type ? 'missing' : n.type),
                   s = (n && n.target && n.target.href) || t,
                   l = new Error(
                     'Loading CSS chunk ' + e + ' failed.\n(' + s + ')',
                   );
                 (l.code = 'CSS_CHUNK_LOAD_FAILED'),
-                  (l.type = i),
+                  (l.type = a),
                   (l.request = s),
-                  a.parentNode.removeChild(a),
+                  i.parentNode.removeChild(i),
                   o(l);
               }
             };
             return (
-              (a.onerror = a.onload = i),
-              (a.href = t),
+              (i.onerror = i.onload = a),
+              (i.href = t),
               n
-                ? n.parentNode.insertBefore(a, n.nextSibling)
-                : document.head.appendChild(a),
-              a
+                ? n.parentNode.insertBefore(i, n.nextSibling)
+                : document.head.appendChild(i),
+              i
             );
           },
           t = (e, t) => {
@@ -701,33 +687,33 @@
               r++
             ) {
               var o = n[r],
-                a = o.getAttribute('data-href') || o.getAttribute('href');
-              if ('stylesheet' === o.rel && (a === e || a === t)) return o;
+                i = o.getAttribute('data-href') || o.getAttribute('href');
+              if ('stylesheet' === o.rel && (i === e || i === t)) return o;
             }
-            var i = document.getElementsByTagName('style');
-            for (r = 0; r < i.length; r++) {
-              (o = i[r]), (a = o.getAttribute('data-href'));
-              if (a === e || a === t) return o;
+            var a = document.getElementsByTagName('style');
+            for (r = 0; r < a.length; r++) {
+              (o = a[r]), (i = o.getAttribute('data-href'));
+              if (i === e || i === t) return o;
             }
           },
           r = (r) =>
-            new Promise((o, a) => {
-              var i = n.miniCssF(r),
-                s = n.p + i;
-              if (t(i, s)) return o();
-              e(r, s, null, o, a);
+            new Promise((o, i) => {
+              var a = n.miniCssF(r),
+                s = n.p + a;
+              if (t(a, s)) return o();
+              e(r, s, null, o, i);
             }),
           o = { 143: 0 };
         n.f.miniCss = (e, t) => {
           var n = {
-            144: 1,
             219: 1,
+            281: 1,
             329: 1,
             540: 1,
             638: 1,
             684: 1,
             874: 1,
-            975: 1,
+            891: 1,
           };
           o[e]
             ? t.push(o[e])
@@ -752,38 +738,38 @@
         var o = n.o(e, t) ? e[t] : void 0;
         if (0 !== o)
           if (o) r.push(o[2]);
-          else if (144 != t) {
-            var a = new Promise((n, r) => (o = e[t] = [n, r]));
-            r.push((o[2] = a));
-            var i = n.p + n.u(t),
+          else if (281 != t) {
+            var i = new Promise((n, r) => (o = e[t] = [n, r]));
+            r.push((o[2] = i));
+            var a = n.p + n.u(t),
               s = new Error(),
               l = (r) => {
                 if (n.o(e, t) && ((o = e[t]), 0 !== o && (e[t] = void 0), o)) {
-                  var a = r && ('load' === r.type ? 'missing' : r.type),
-                    i = r && r.target && r.target.src;
+                  var i = r && ('load' === r.type ? 'missing' : r.type),
+                    a = r && r.target && r.target.src;
                   (s.message =
-                    'Loading chunk ' + t + ' failed.\n(' + a + ': ' + i + ')'),
+                    'Loading chunk ' + t + ' failed.\n(' + i + ': ' + a + ')'),
                     (s.name = 'ChunkLoadError'),
-                    (s.type = a),
-                    (s.request = i),
+                    (s.type = i),
+                    (s.request = a),
                     o[1](s);
                 }
               };
-            n.l(i, l, 'chunk-' + t, t);
+            n.l(a, l, 'chunk-' + t, t);
           } else e[t] = 0;
       }),
         (n.O.j = (t) => 0 === e[t]);
       var t = (t, r) => {
           var o,
-            a,
-            [i, s, l] = r,
+            i,
+            [a, s, l] = r,
             c = 0;
-          if (i.some((t) => 0 !== e[t])) {
+          if (a.some((t) => 0 !== e[t])) {
             for (o in s) n.o(s, o) && (n.m[o] = s[o]);
             if (l) var u = l(n);
           }
-          for (t && t(r); c < i.length; c++)
-            (a = i[c]), n.o(e, a) && e[a] && e[a][0](), (e[a] = 0);
+          for (t && t(r); c < a.length; c++)
+            (i = a[c]), n.o(e, i) && e[i] && e[i][0](), (e[i] = 0);
           return n.O(u);
         },
         r = (globalThis['webpackChunkquasarapp'] =
