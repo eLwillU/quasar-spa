@@ -283,7 +283,7 @@
             this.jsOnFhir = new o.b(
               'https://test.midata.coop',
               'mindschedule',
-              'https://relaxed-bublanina-d3592e.netlify.app/',
+              'https://relaxed-bublanina-d3592e.netlify.app/#/midata/login',
             );
           }
           getJSonFhir() {
